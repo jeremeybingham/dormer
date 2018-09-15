@@ -1,2 +1,2 @@
-# ramco
-python functions for the RAMCO API
+# dormer
+flask-based python integration functions for the ramco API
