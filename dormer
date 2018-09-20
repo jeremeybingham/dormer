@@ -1,9 +1,0 @@
-server {
-    listen 80;
-    server_name mansard.net;
-
-    location / {
-        include proxy_params;
-        proxy_pass http://unix:/home/ubuntu/dormer/dormer.sock;
-    }
-}
