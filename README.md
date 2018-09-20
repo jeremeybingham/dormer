@@ -1,2 +1,2 @@
 # dormer
-flask-based python integration functions for the ramco API
+flask-based python mailchimp integration functions for the RAMCO API
