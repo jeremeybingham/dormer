@@ -1,2 +1,2 @@
 # dormer
-flask-based python mailchimp integration functions for the RAMCO API
+base API and microservices framework for the RAMCO AMS https://ramcoams.com
