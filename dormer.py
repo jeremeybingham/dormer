@@ -12,4 +12,4 @@ logging.basicConfig(filename='flask_error.log',level=logging.ERROR)
 # root
 @app.route("/")
 def hello():
-    return "<h1 style='color:blue'>hello dormer</h1>".
+    return "<h1 style='color:blue'>hello dormer.</h1>"
