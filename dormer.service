@@ -6,8 +6,8 @@ After=network.target
 User=ubuntu
 Group=www-data
 WorkingDirectory=/home/ubuntu/dormer
-Environment="PATH=/home/ubuntu/dormer/dormerenv/bin"
-ExecStart=/home/ubuntu/dormer/dormerenv/bin/gunicorn --workers 3 --bind unix:dormer.sock -m 007 wsgi:app
+Environment="PATH=/home/ubuntu/dormer/dormer_env/bin"
+ExecStart=/home/ubuntu/dormer/dormer_env/bin/gunicorn --workers 3 --bind unix:dormer.sock -m 007 wsgi:app
 
 [Install]
 WantedBy=multi-user.target
