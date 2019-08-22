@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}hello, dormer.{% endblock %}
+
+{% block content %}
+<div class="container">
+
+<h1>hello dormer!</h1>
+<p>{{ message }}<p>
+<p>{{ timestamp }}<p>
+<p>{{ counter }}<p>
+
+<img src="{{url_for('static', filename='dormer.png')}}" alt="a house with dormer windows, displayed to indicate static files are being served">
+
+<p>if you see the house, static files are being served correctly.<p>
+
+</div>
+{% endblock %}
