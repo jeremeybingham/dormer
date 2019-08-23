@@ -1,6 +1,6 @@
 # dormer
 
-dockerized flask app base with SSL and redis
+dockerized flask app base with nginx proxy, automated SSL, redis with persistent storage + bootstrap
 
 you need your domain A record corretly pointed at the docker host IP.
 
