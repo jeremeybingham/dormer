@@ -12,12 +12,6 @@ redis_db = redis.Redis(host='redis', port=6379)
 # logger
 logging.basicConfig(filename='flask_error.log',level=logging.ERROR)
 
-# a jinja filter to format datetimes
-@app.template_filter()
-def format_datetime(i):
-	dt = datetime.fromtimestamp(i)
-	out = dt.strftime('%I:%M:%S')
-	return out
 
 # generate the current time and shift it to US/Eastern
 def make_timestamp():
