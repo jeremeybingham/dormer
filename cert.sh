@@ -1,6 +1,6 @@
 #!/bin/bash
 
-domains=(docker.mansard.net www.docker.mansard.net)
+domains=(dormer.mansard.net www.dormer.mansard.net)
 rsa_key_size=4096
 data_path="./data/certbot"
 email="ssl@mansard.net" # Adding a valid address is strongly recommended
