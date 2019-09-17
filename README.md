@@ -2,7 +2,13 @@
 
 dockerized flask app base with nginx proxy, automated SSL, redis with persistent storage + bootstrap
 
-you need your domain A record correctly pointed at the docker host IP.
+you need your domain's A records correctly pointed at the docker host IP.
+
+Tested on Ubuntu 18.04 with Docker and Docker-Compose installed using the basic instructions at: 
+
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04
+https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-18-04
+
 
 Installation:
 ```
