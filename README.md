@@ -2,7 +2,7 @@
 
 dockerized flask app base with nginx proxy, automated SSL, redis with persistent storage + bootstrap
 
-you need your domain A record corretly pointed at the docker host IP.
+you need your domain A record correctly pointed at the docker host IP.
 
 Installation:
 ```
