@@ -1,15 +1,17 @@
 #!/bin/bash
 
-domains=(dormer.mansard.net www.dormer.mansard.net)
+
+# search and replace all instances of "your.domain.com" with actual domain
+domains=(your.domain.com)
 rsa_key_size=4096
 data_path="./data/certbot"
-email="ssl@mansard.net" # Adding a valid address is strongly recommended
-staging=0 # Set to 1 if you're testing your setup to avoid hitting request limits
+email="your@email.com" # use a valid address
+staging=0 # set to 1 for testing, 0 for production
 
 if [ -d "$data_path" ]; then
   read -p "Existing data found for $domains. Continue and replace existing certificate? (y/N) " decision
   if [ "$decision" != "Y" ] && [ "$decision" != "y" ]; then
-    exit
+	exit
   fi
 fi
 
@@ -27,14 +29,14 @@ path="/etc/letsencrypt/live/$domains"
 mkdir -p "$data_path/conf/live/$domains"
 docker-compose run --rm --entrypoint "\
   openssl req -x509 -nodes -newkey rsa:1024 -days 1\
-    -keyout '$path/privkey.pem' \
-    -out '$path/fullchain.pem' \
-    -subj '/CN=localhost'" certbot
+	-keyout '$path/privkey.pem' \
+	-out '$path/fullchain.pem' \
+	-subj '/CN=localhost'" certbot
 echo
 
 
 echo "### Starting nginx ..."
-docker-compose up --force-recreate -d
+sudo docker-compose up --force-recreate -d
 echo
 
 echo "### Deleting dummy certificate for $domains ..."
@@ -63,13 +65,13 @@ if [ $staging != "0" ]; then staging_arg="--staging"; fi
 
 docker-compose run --rm --entrypoint "\
   certbot certonly --webroot -w /var/www/certbot \
-    $staging_arg \
-    $email_arg \
-    $domain_args \
-    --rsa-key-size $rsa_key_size \
-    --agree-tos \
+	$staging_arg \
+	$email_arg \
+	$domain_args \
+	--rsa-key-size $rsa_key_size \
+	--agree-tos \
 	--eff-email \
-    --force-renewal" certbot
+	--force-renewal" certbot
 echo
 
 echo "### Reloading nginx ..."
