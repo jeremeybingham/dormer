@@ -1,11 +1,11 @@
 #!/bin/bash
 
 
-# search and replace all instances of "your.domain.com" with actual domain
-domains=(your.domain.com)
+# search and replace all instances of "dormer.mansard.net" with actual domain
+domains=(dormer.mansard.net)
 rsa_key_size=4096
 data_path="./data/certbot"
-email="your@email.com" # use a valid address
+email="ssl@mansard.net" # use a valid address
 staging=0 # set to 1 for testing, 0 for production
 
 if [ -d "$data_path" ]; then
