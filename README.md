@@ -1,10 +1,10 @@
 # dormer
 
-dockerized flask app base with nginx proxy, automated SSL, redis with persistent storage + bootstrap
+dockerized flask app base with nginx proxy, automated SSL, & bootstrap
 
 you need your domain's A records correctly pointed at the docker host IP.
 
-Tested on Ubuntu 18.04 with Docker and Docker-Compose installed using the basic instructions at: 
+Tested on Ubuntu 18.04 with Docker and Docker-Compose installed using the instructions at: 
 
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04
 https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-18-04
