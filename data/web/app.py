@@ -2,9 +2,13 @@ import os, time, logging, sys, json
 from datetime import datetime
 from delorean import Delorean
 from flask import Flask, render_template, request, jsonify, redirect, url_for, Response, session, abort
+from flask_login import LoginManager
 
 # instantiate your app
 app = Flask(__name__)
+
+# instantiate login manager
+login = LoginManager(app)
 
 # logger
 logging.basicConfig(filename='flask_error.log',level=logging.INFO)
@@ -21,4 +25,6 @@ def hello():
     version = f'{sys.version_info.major}.{sys.version_info.minor}'
     message = f'hello world from dormer in Docker on Python {version}'
     timestamp = f'Right now: {make_timestamp()}'
-    return render_template('hello.html', message=message, timestamp=timestamp)
+    login = str(os.environ['FLASK_LOGIN'])
+    password = str(os.environ['FLASK_PW'])
+    return render_template('hello.html', message=message, timestamp=timestamp, login=login, password=password)

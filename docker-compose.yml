@@ -43,7 +43,9 @@ services:
       MYSQL_ROOT_PASSWORD: "$MYSQL_ROOT_PASSWORD"
       MYSQL_USER: "$MYSQL_USER"
       MYSQL_PASSWORD: "$MYSQL_PASSWORD"
-    
+      FLASK_LOGIN: "$FLASK_LOGIN"
+      FLASK_PW: "$FLASK_PW"
+
   adminer:
     image: adminer
     restart: always
