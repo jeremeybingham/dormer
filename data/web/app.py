@@ -20,5 +20,5 @@ def make_timestamp():
 def hello():
     version = f'{sys.version_info.major}.{sys.version_info.minor}'
     message = f'hello world from dormer in Docker on Python {version}'
-    timestamp = f'Right now: { make_timestamp() }'
+    timestamp = f'Right now: {make_timestamp()}'
     return render_template('hello.html', message=message, timestamp=timestamp)
