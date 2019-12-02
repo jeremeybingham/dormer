@@ -44,7 +44,7 @@ services:
       MYSQL_USER: "$MYSQL_USER"
       MYSQL_PASSWORD: "$MYSQL_PASSWORD"
     
-   adminer:
+  adminer:
     image: adminer
     restart: always
     ports:
