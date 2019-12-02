@@ -34,3 +34,4 @@ services:
       FLASK_ENV: development
       FLASK_LOGIN: "$FLASK_LOGIN"
       FLASK_PW: "$FLASK_PW"
+      FLASK_SECRET_KEY: "$FLASK_SECRET_KEY"
