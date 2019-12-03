@@ -12,8 +12,11 @@
     {% block meta %}<!-- block for any custom META content -->
     {% endblock %}<!-- end meta block -->
 
-    <!-- bootstrap css -->
+    <!-- bootstrap base css -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- custom bootstrap css -->
+    <link href="{{ url_for('static', filename='bootstrap_mansard.css') }}" rel="stylesheet">
 
     <!-- bootstrap-table css -->
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.15.4/dist/bootstrap-table.min.css">
@@ -50,9 +53,6 @@
       {% block content %}
       <!-- page main content goes here -->
       {% endblock %}
-
-      <!-- home link -->
-      <a href="{{ url_for('hello') }}">Home</a>
 
       {% block bootstrap_container_close %}
       <!-- close bootstrap container div, remove if fullscreen desired -->

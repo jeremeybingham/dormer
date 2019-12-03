@@ -5,14 +5,20 @@
 {% block content %}
 <div class="container">
 
-<h1 class="display-3 text-primary">hello dormer!</h1>
+<h1 class="display-4 text-primary">hello dormer!</h1>
 
 <p>{{ message }}<br>
-{{ timestamp }}<p>
+{{ timestamp }}<br>
+<br>
+You're logged in as: {{ user }}.<p>
 
-<p>if you see the house, static files are being served correctly.<p>
+<p>If you see the house, static files are being served correctly.<p>
 
 <img src="{{url_for('static', filename='dormer.png')}}" class="img-fluid" alt="a house with dormer windows, displayed to indicate static files are being served">
+<br><br>
+
+<a class="btn btn-outline-secondary" href="{{url_for('logout')}}" role="button">Log Out</a>
 
 </div>
+
 {% endblock %}
