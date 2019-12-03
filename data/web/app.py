@@ -32,9 +32,8 @@ def hello():
         version = f'{sys.version_info.major}.{sys.version_info.minor}'
         message = f'hello world from dormer in Docker on Python {version}'
         timestamp = f'Right now: {make_timestamp()}'
-        login = str(os.environ['FLASK_LOGIN'])
-        password = str(os.environ['FLASK_PW'])
-        return render_template('hello.html', message=message, timestamp=timestamp, login=login, password=password)
+        user = str(session['username'])
+        return render_template('hello.html', message=message, timestamp=timestamp, user=user)
     
     else:
         # User is not logged in, redirect to login page
