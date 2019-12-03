@@ -16,7 +16,6 @@ app.secret_key = os.environ['FLASK_SECRET_KEY']
 # logger
 logging.basicConfig(filename='flask_error.log',level=logging.INFO)
 
-
 # generate the current time and shift it to US/Eastern
 def make_timestamp():
     now = Delorean().shift("US/Eastern").datetime.strftime('%A %B %d %Y, %I:%M:%S %p %Z')
@@ -34,7 +33,7 @@ def hello():
         timestamp = f'Right now: {make_timestamp()}'
         user = str(session['username'])
         return render_template('hello.html', message=message, timestamp=timestamp, user=user)
-    
+
     else:
         # User is not logged in, redirect to login page
         return redirect(url_for('login'))
